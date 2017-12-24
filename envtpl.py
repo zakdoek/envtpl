@@ -88,7 +88,7 @@ def process_file(input_filename, output_filename, variables,
         with open(output_filename, 'w') as f:
             f.write(output.encode("utf-8"))
     else:
-        stdout_write(output)
+        stdout_write(output.encode("utf-8"))
 
     if input_filename and remove_template:
         os.unlink(input_filename)

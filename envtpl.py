@@ -88,7 +88,7 @@ def process_file(input_filename, output_filename, variables,
         with open(output_filename, 'w') as f:
             f.write(output.encode("utf-8"))
     else:
-        stdout_write(output.encode("utf-8"))
+        stdout_write(output)
 
     if input_filename and remove_template:
         os.unlink(input_filename)
@@ -102,7 +102,7 @@ def _render_string(string, variables, undefined):
 
 def _unicodify(s):
     if isinstance(s, str) and IS_PYTHON_2:
-        s = unicode(s, 'utf-8')  # NOQA
+        s = s.encode('utf-8')  # NOQA
     return s
 
 

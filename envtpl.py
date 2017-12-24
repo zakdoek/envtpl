@@ -102,7 +102,7 @@ def _render_string(string, variables, undefined):
 
 def _unicodify(s):
     if isinstance(s, str) and IS_PYTHON_2:
-        s = s.encode('utf-8')  # NOQA
+        s = unicode(s, 'utf-8')  # NOQA
     return s
 
 
